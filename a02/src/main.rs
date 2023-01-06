@@ -6,8 +6,8 @@ fn main() {
       x: i64,
       a: [i64; n],
     }
-    for i in 0..n {
-        if a[i] == x {
+    for ai in &a {
+        if ai == &x {
             println!("Yes");
             return;
         }
