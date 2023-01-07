@@ -7,9 +7,9 @@ fn main() {
       a: [i64; n],
       b: [i64; n],
     }
-    for i in 0..n {
-        for j in 0..n {
-            if a[i] + b[j] == k {
+    for ai in &a {
+        for bj in &b {
+            if ai + bj == k {
                 println!("Yes");
                 return;
             }
