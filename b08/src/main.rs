@@ -7,8 +7,8 @@ fn main() {
         q: usize,
         abcd: [(usize, usize, usize, usize); q],
     }
-    let h = 10;
-    let w = 10;
+    let h = 1500;
+    let w = 1500;
     let mut grid = vec![vec![0; w + 2]; h + 2];
     for pair in &xy {
         let (x, y) = pair;
