@@ -18,21 +18,22 @@ fn main() {
         m[*a][*d + 1] -= 1;
     }
     let mut mm = vec![vec![0; w + 2]; h + 2];
-    for i in 0..h {
-        for j in 0..w {
-            mm[i + 1][j + 1] = mm[i + 1][j] + m[i][j];
+    for i in 1..=h {
+        for j in 1..=w {
+            mm[i][j] = mm[i][j - 1] + m[i][j];
         }
     }
-    for j in 0..w {
-        for i in 0..h {
-            mm[i + 1][j + 1] += mm[i][j + 1];
+    for j in 1..=w {
+        for i in 1..=h {
+            mm[i][j] += mm[i - 1][j];
         }
     }
-    for row in mm.iter().skip(2) {
+    for row in mm.iter().take(h + 1).skip(1) {
         println!(
             "{}",
             row.iter()
-                .skip(2)
+                .take(w + 1)
+                .skip(1)
                 .map(|e| e.to_string())
                 .collect::<Vec<String>>()
                 .join(" ")
