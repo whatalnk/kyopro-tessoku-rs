@@ -78,6 +78,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "a12"
+version = "0.1.0"
+dependencies = [
+ "proconio",
+]
+
+[[package]]
 name = "b01"
 version = "0.1.0"
 dependencies = [
