@@ -12,27 +12,27 @@ fn main() {
     let n1 = n / 2;
     let n2 = n - n1;
     let mut a1 = vec![0; 1 << n1];
-    for i in 0..(1 << n1) {
+    for (i, a1i) in a1.iter_mut().enumerate() {
         let mut s = 0;
-        for j in 0..n1 {
+        for (j, aj) in a.iter().enumerate().take(n1) {
             let d = 1 << j;
             if (i / d) % 2 == 1 {
-                s += a[j];
+                s += aj;
             }
         }
-        a1[i] = s;
+        *a1i = s;
     }
 
     let mut a2 = vec![0; 1 << n2];
-    for i in 0..(1 << n2) {
+    for (i, a2i) in a2.iter_mut().enumerate() {
         let mut s = 0;
-        for j in 0..n2 {
+        for (j, aj) in a.iter().skip(n1).enumerate() {
             let d = 1 << j;
             if (i / d) % 2 == 1 {
-                s += a[n1 + j];
+                s += aj;
             }
         }
-        a2[i] = s;
+        *a2i = s;
     }
 
     a2.sort();
