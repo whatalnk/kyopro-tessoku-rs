@@ -23,7 +23,7 @@ fn main() {
         a1[i] = s;
     }
 
-    let mut a2 = vec![0; 1 << n1];
+    let mut a2 = vec![0; 1 << n2];
     for i in 0..(1 << n2) {
         let mut s = 0;
         for j in 0..n2 {
