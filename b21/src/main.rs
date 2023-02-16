@@ -1,4 +1,5 @@
 #![allow(clippy::many_single_char_names)]
+#![allow(clippy::needless_range_loop)]
 
 use proconio::input;
 use proconio::marker::Chars;
@@ -19,7 +20,7 @@ fn main() {
             dp[i][i + 1] = 1;
         }
     }
-    for length in 2..=(n - 1) {
+    for length in 2..n {
         for l in 0..(n - length) {
             let r = l + length;
             if s[l] == s[r] {
