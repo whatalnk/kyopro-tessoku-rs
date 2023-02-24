@@ -13,7 +13,7 @@ fn is_prime(x: i64) -> bool {
         }
         i += 1;
     }
-    return true;
+    true
 }
 
 fn main() {
