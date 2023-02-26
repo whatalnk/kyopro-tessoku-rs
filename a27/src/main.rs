@@ -5,15 +5,15 @@ use proconio::input;
 fn gcd(mut a: i64, mut b: i64) -> i64 {
     while a >= 1 && b >= 1 {
         if a >= b {
-            a = a % b;
+            a %= b;
         } else {
-            b = b % a;
+            b %= a;
         }
     }
     if a != 0 {
-        return a;
+        a
     } else {
-        return b;
+        b
     }
 }
 
