@@ -20,5 +20,5 @@ fn main() {
         a: i64,
         b: i64,
     }
-    println!("{}", power(a, b, 1000000007));
+    println!("{}", power(a, b, 1_000_000_007));
 }
