@@ -8,8 +8,8 @@ fn main() {
         a: [usize; n],
     }
     let mut xor_sum = a[0];
-    for i in 1..n {
-        xor_sum ^= a[i];
+    for ai in a.iter().skip(1) {
+        xor_sum ^= ai;
     }
     if xor_sum == 0 {
         println!("Second");
